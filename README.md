@@ -14,3 +14,6 @@ Z detailu kapely je možné kliknout na žánr (který vede na homepage s vyfilt
 
 Detail osoby zobrazuje jméno, rok narození, fotografii a popis. Dále se zde nachází seznam kapel, ve kterých daná osoba hrála, a odkazy vedoucí na detail kapely. Podobně to funguje i s alby a skladbami.
 
+## Wireframes
+
+![wireframe](./wireframe.jpg)
