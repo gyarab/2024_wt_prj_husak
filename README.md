@@ -17,3 +17,7 @@ Detail osoby zobrazuje jméno, rok narození, fotografii a popis. Dále se zde n
 ## Wireframes
 
 ![wireframe](./wireframe.jpg)
+
+## DB schema
+
+![dbschema](./dbschema.jpg)
