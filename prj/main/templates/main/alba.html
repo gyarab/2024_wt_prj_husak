@@ -1,32 +1,11 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-    <header>
-        <div class="d-flex container-fluid">
-            <h3">Alba</h3>
-            <form class="d-flex ms-auto">
-                <input class="form-control me-2 bg-dark" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-light" type="submit">Search</button>
-            </form>
-        </div>
-        
-        <hr></hr>
-    </header>
+    {% include "main/header.html" with page_title="Alba" %}
     <main>
         <div class="container text-center">
             <div class="row">
-                <div class="col-12 col-md-4" style="margin-bottom: 2rem;">
-                    <div class="card bg-dark border-gradient" style="height: 100%">
-                        <img src="https://placecats.com/millie/300/200" class="card-img-top" alt="Cat">
-                        <div class="card-body d-flex flex-column" style="padding-bottom: 20px">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <div class="mt-auto" style="text-align: right; text-align: bottom;">
-                                <a href="#" class="btn btn-outline-light">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% include "main/card.html" with card_title="Rust in Peace" card_text="Awesome album" card_link="https://example.com" card_link_text="Listen Now" %}
                 <div class="col-12 col-md-4" style="margin-bottom: 2rem;">
                     <div class="card bg-dark" style="margin-bottom: 2rem; height: 100%">
                         <img src="https://placecats.com/millie_neo/300/200%22" class="card-img-top" alt="Cat">
