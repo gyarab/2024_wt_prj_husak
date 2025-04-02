@@ -1,0 +1,26 @@
+[
+{
+    "model": "main.bandgenre",
+    "pk": 1,
+    "fields": {
+        "band": 1,
+        "genre": 1
+    }
+},
+{
+    "model": "main.bandgenre",
+    "pk": 2,
+    "fields": {
+        "band": 1,
+        "genre": 2
+    }
+},
+{
+    "model": "main.bandgenre",
+    "pk": 3,
+    "fields": {
+        "band": 1,
+        "genre": 3
+    }
+}
+]

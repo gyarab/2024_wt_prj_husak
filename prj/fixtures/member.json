@@ -1,0 +1,12 @@
+[
+{
+    "model": "main.member",
+    "pk": 1,
+    "fields": {
+        "name": "Dave Mustaine",
+        "birth_year": 1961,
+        "death_year": null,
+        "image": "member_images/dave_mustaine_8noRfQY.jpg"
+    }
+}
+]

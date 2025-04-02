@@ -1,0 +1,12 @@
+[
+{
+    "model": "main.bandmember",
+    "pk": 1,
+    "fields": {
+        "band": 1,
+        "member": 1,
+        "startYear": 1983,
+        "endYear": null
+    }
+}
+]

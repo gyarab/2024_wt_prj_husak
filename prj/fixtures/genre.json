@@ -1,0 +1,51 @@
+[
+{
+    "model": "main.genre",
+    "pk": 1,
+    "fields": {
+        "title": "Thrash Metal"
+    }
+},
+{
+    "model": "main.genre",
+    "pk": 2,
+    "fields": {
+        "title": "Speed Metal"
+    }
+},
+{
+    "model": "main.genre",
+    "pk": 3,
+    "fields": {
+        "title": "Heavy Metal"
+    }
+},
+{
+    "model": "main.genre",
+    "pk": 4,
+    "fields": {
+        "title": "Alternative Metal"
+    }
+},
+{
+    "model": "main.genre",
+    "pk": 5,
+    "fields": {
+        "title": "Black Metal"
+    }
+},
+{
+    "model": "main.genre",
+    "pk": 6,
+    "fields": {
+        "title": "Death Metal"
+    }
+},
+{
+    "model": "main.genre",
+    "pk": 7,
+    "fields": {
+        "title": "Metalcore"
+    }
+}
+]

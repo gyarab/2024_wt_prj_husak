@@ -1,0 +1,13 @@
+[
+{
+    "model": "main.band",
+    "pk": 1,
+    "fields": {
+        "title": "Megadeth",
+        "startYear": 1983,
+        "endYear": null,
+        "description": "Megadeth is an American thrash metal band formed in Los Angeles in 1983 by vocalist/guitarist Dave Mustaine.",
+        "image": "band_images/megadeth.webp"
+    }
+}
+]

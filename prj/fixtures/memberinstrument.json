@@ -1,0 +1,10 @@
+[
+{
+    "model": "main.memberinstrument",
+    "pk": 1,
+    "fields": {
+        "member": 1,
+        "instrument": 1
+    }
+}
+]
