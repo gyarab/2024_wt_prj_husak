@@ -6,6 +6,7 @@ class Band(models.Model):
     endYear = models.IntegerField(null=True, blank=True) #NULL if the band is still active (=nowdays)
     description = models.TextField(blank=True, default="")
     image = models.ImageField(upload_to='band_images/', null=True, blank=True, default='band_images/default.png')
+    link = models.URLField(blank=True, default="#")
     
     def __str__(self):
         return f"{self.title} ({self.startYear} - {self.endYear if self.endYear else 'Nowdays'})"
@@ -17,12 +18,14 @@ class Album(models.Model):
     description = models.TextField(blank=True, default="")
     image = models.ImageField(upload_to='album_images/', null=True, blank=True, default='album_images/default.png')
     band = models.ForeignKey('Band', null=True, on_delete=models.SET_NULL)
+    link = models.URLField(blank=True, default="#")
 
     def __str__(self):
         return f"{self.title} ({self.year}) by {self.band}"
     
 class Member(models.Model):
     name = models.CharField(max_length=300)
+    description = models.TextField(blank=True, default="")
     birth_year = models.IntegerField()
     death_year = models.IntegerField(null=True, blank=True) #NULL if the member is still alive
     image = models.ImageField(upload_to='member_images/', null=True, blank=True, default='member_images/default.png')
@@ -30,6 +33,16 @@ class Member(models.Model):
     def __str__(self):
         return f"{self.name} ({self.birth_year} - {self.death_year if self.death_year else 'Today'})"
 
+class Song(models.Model):
+    title = models.CharField(max_length=300)
+    description = models.TextField(blank=True, default="")
+    lyrics = models.TextField(blank=True, default="")
+    album = models.ForeignKey('Album', null=True, on_delete=models.SET_NULL)
+    image = models.ImageField(upload_to='song_images/', null=True, blank=True, default='song_images/default.png')
+    link = models.URLField(blank=True, default="#")
+
+    def __str__(self):
+        return f"{self.title} ({self.album})"
 
 class Genre(models.Model):
     title = models.CharField(max_length=300)
@@ -69,3 +82,6 @@ class MemberInstrument(models.Model):
 
     def __str__(self):
         return f"{self.member} - {self.instrument}"
+
+
+

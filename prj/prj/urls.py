@@ -19,14 +19,15 @@ from django.urls import path
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
+from main.views import albums_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='main/homepage.html'), name='home'),
-    path('alba/', TemplateView.as_view(template_name='main/alba.html'), name='alba'),
+    path('alba/', albums_view, name='alba'),
     path('skladby/', TemplateView.as_view(template_name='main/skladby.html'), name='skladby'),
     path('kapely/', TemplateView.as_view(template_name='main/kapely.html'), name='kapely'),
-    path('osobnosti/', TemplateView.as_view(template_name='main/osobnosti.html'), name='osobnosti'),
+    path('clenove/', members_view, name='clenove'),
 ]
 
 if settings.DEBUG:

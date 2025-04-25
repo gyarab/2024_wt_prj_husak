@@ -2,16 +2,19 @@ from django.contrib import admin
 from .models import *
 
 class BandAdmin(admin.ModelAdmin):
-    list_display = ["id", "title", "startYear", "endYear", "description"]
+    list_display = ["id", "title", "startYear", "endYear", "description", "link"]
 
 class AlbumAdmin(admin.ModelAdmin):
-    list_display = ["id", "title", "year", "description", "band"]
+    list_display = ["id", "title", "year", "description", "band", "link"]
 
 class MemberAdmin(admin.ModelAdmin):
     list_display = ["id", "name", "birth_year", "death_year"]
 
 class GenreAdmin(admin.ModelAdmin):
     list_display = ["id", "title"]
+
+class SongAdmin(admin.ModelAdmin):
+    list_display = ["id", "title", "album", "link"]
 
 class InstrumentAdmin(admin.ModelAdmin):
     list_display = ["id", "title"]
@@ -30,6 +33,7 @@ admin.site.register(Band, BandAdmin)
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Member, MemberAdmin)
 admin.site.register(Genre, GenreAdmin)
+admin.site.register(Song, SongAdmin)
 admin.site.register(Instrument, InstrumentAdmin)
 admin.site.register(BandGenre, BandGenreAdmin)
 admin.site.register(BandMember, BandMemberAdmin)

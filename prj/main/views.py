@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from .models import Album
 
-def album_list(request):
+def albums_view(request):
     albums = Album.objects.all()
-    return render(request, 'templates/alba.html', {'albums': albums})
+    return render(request, 'main/alba.html', {'albums': albums})
+
 
 
 

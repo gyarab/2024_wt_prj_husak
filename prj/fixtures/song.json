@@ -1,0 +1,14 @@
+[
+{
+    "model": "main.song",
+    "pk": 1,
+    "fields": {
+        "title": "Holy Wars... The Punishment Due",
+        "description": "\"Holy Wars... The Punishment Due\" is widely considered one of Megadeth's greatest songs and one of the greatest songs in metal",
+        "lyrics": "Brother will kill brother, spilling blood across the land\nKilling for religion, something I don't understand\nFools like me who cross the sea and come to foreign lands\nAsk the sheep for their beliefs, \"Do you kill on God's command?\"",
+        "album": 1,
+        "image": "song_images/holy_wars.webp",
+        "link": "https://open.spotify.com/track/0bM9c5A7CterSOEssmWqAa"
+    }
+}
+]

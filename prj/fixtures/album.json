@@ -7,7 +7,8 @@
         "year": 1990,
         "description": "Rust in Peace is the fourth studio album by American thrash metal band Megadeth, released on September 24, 1990, by Capitol Records. It was the first Megadeth album to feature guitarist Marty Friedman and drummer Nick Menza. The songs \"Hangar 18\" and \"Holy Wars... The Punishment Due\" were released as singles.",
         "image": "album_images/rust_in_peace.webp",
-        "band": 1
+        "band": 1,
+        "link": "https://open.spotify.com/album/4e6ML9RBhDyyKTaTwbiRZv"
     }
 }
 ]
