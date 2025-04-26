@@ -23,12 +23,12 @@ class Album(models.Model):
     def __str__(self):
         return f"{self.title} ({self.year}) by {self.band}"
     
-class Member(models.Model):
+class Artist(models.Model):
     name = models.CharField(max_length=300)
     description = models.TextField(blank=True, default="")
     birth_year = models.IntegerField()
-    death_year = models.IntegerField(null=True, blank=True) #NULL if the member is still alive
-    image = models.ImageField(upload_to='member_images/', null=True, blank=True, default='member_images/default.png')
+    death_year = models.IntegerField(null=True, blank=True) #NULL if the artist is still alive
+    image = models.ImageField(upload_to='artist_images/', null=True, blank=True, default='artist_images/default.png')
 
     def __str__(self):
         return f"{self.name} ({self.birth_year} - {self.death_year if self.death_year else 'Today'})"
@@ -66,22 +66,22 @@ class BandGenre(models.Model):
         return f"{self.band} - {self.genre}"
 
 
-class BandMember(models.Model):
+class BandArtist(models.Model):
     band = models.ForeignKey('Band', null=True, on_delete=models.SET_NULL)
-    member = models.ForeignKey('Member', null=True, on_delete=models.SET_NULL)
+    artist = models.ForeignKey('Artist', null=True, on_delete=models.SET_NULL)
     startYear = models.IntegerField()
-    endYear = models.IntegerField(null=True, blank=True) #NULL if the member is still part of the band (=nowdays)
+    endYear = models.IntegerField(null=True, blank=True) #NULL if the artist is still part of the band (=nowdays)
 
     def __str__(self):
-        return f"{self.band} - {self.member} ({self.startYear} - {self.endYear if self.endYear else 'Nowdays'})"
+        return f"{self.band} - {self.artist} ({self.startYear} - {self.endYear if self.endYear else 'Nowdays'})"
 
 
-class MemberInstrument(models.Model):
-    member = models.ForeignKey('Member', null=True, on_delete=models.SET_NULL)
+class ArtistInstrument(models.Model):
+    artist = models.ForeignKey('Artist', null=True, on_delete=models.SET_NULL)
     instrument = models.ForeignKey('Instrument', null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return f"{self.member} - {self.instrument}"
+        return f"{self.artist} - {self.instrument}"
 
 
 

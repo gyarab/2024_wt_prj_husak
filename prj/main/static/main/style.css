@@ -1,12 +1,10 @@
 .card_animate {
     position: relative;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border-radius: 10px; /* Optional: rounded corners */
     overflow: hidden;    /* Ensure rounded corners work correctly */
 }
 
 .card_animate:hover {
-    transform: scale(1.05); /* Slightly enlarge the card */
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Light glow effect */
 }
 
@@ -18,6 +16,24 @@
     font-family: "Montserrat";
 }
 
+.animation_pop {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.animation_pop:hover {
+    transform: scale(1.01); /* Slightly enlarge the card */
+}
+
 .bg-black {
     background-color: rgb(16, 15, 15);
+}
+
+.link-pop {
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+.link-pop:hover {
+    color: #bfdae0;
+    text-shadow: 0 0 8px #bfdae0;
 }

@@ -7,7 +7,7 @@ class BandAdmin(admin.ModelAdmin):
 class AlbumAdmin(admin.ModelAdmin):
     list_display = ["id", "title", "year", "description", "band", "link"]
 
-class MemberAdmin(admin.ModelAdmin):
+class ArtistAdmin(admin.ModelAdmin):
     list_display = ["id", "name", "birth_year", "death_year"]
 
 class GenreAdmin(admin.ModelAdmin):
@@ -22,19 +22,19 @@ class InstrumentAdmin(admin.ModelAdmin):
 class BandGenreAdmin(admin.ModelAdmin):
     list_display = ["id", "band", "genre"]
 
-class BandMemberAdmin(admin.ModelAdmin):
-    list_display = ["id", "band", "member"]
+class BandArtistAdmin(admin.ModelAdmin):
+    list_display = ["id", "band", "artist"]
 
-class MemberInstrumentAdmin(admin.ModelAdmin):
-    list_display = ["id", "member", "instrument"]
+class ArtistInstrumentAdmin(admin.ModelAdmin):
+    list_display = ["id", "artist", "instrument"]
 
 
 admin.site.register(Band, BandAdmin)
 admin.site.register(Album, AlbumAdmin)
-admin.site.register(Member, MemberAdmin)
+admin.site.register(Artist, ArtistAdmin)
 admin.site.register(Genre, GenreAdmin)
 admin.site.register(Song, SongAdmin)
 admin.site.register(Instrument, InstrumentAdmin)
 admin.site.register(BandGenre, BandGenreAdmin)
-admin.site.register(BandMember, BandMemberAdmin)
-admin.site.register(MemberInstrument, MemberInstrumentAdmin)
+admin.site.register(BandArtist, BandArtistAdmin)
+admin.site.register(ArtistInstrument, ArtistInstrumentAdmin)

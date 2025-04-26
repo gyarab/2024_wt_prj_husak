@@ -1,9 +1,9 @@
 [
 {
-    "model": "main.memberinstrument",
+    "model": "main.artistinstrument",
     "pk": 1,
     "fields": {
-        "member": 1,
+        "artist": 1,
         "instrument": 1
     }
 }

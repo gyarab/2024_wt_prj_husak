@@ -20,14 +20,17 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
 from main.views import albums_view
+from main.views import artists_view
+from main.views import songs_view
+from main.views import bands_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='main/homepage.html'), name='home'),
     path('alba/', albums_view, name='alba'),
-    path('skladby/', TemplateView.as_view(template_name='main/skladby.html'), name='skladby'),
-    path('kapely/', TemplateView.as_view(template_name='main/kapely.html'), name='kapely'),
-    path('clenove/', members_view, name='clenove'),
+    path('skladby/', songs_view, name='skladby'),
+    path('kapely/', bands_view, name='kapely'),
+    path('osobnosti/', artists_view, name='osobnosti'),
 ]
 
 if settings.DEBUG:
