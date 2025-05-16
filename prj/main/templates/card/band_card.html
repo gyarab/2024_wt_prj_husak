@@ -1,0 +1,15 @@
+{% extends "card/card.html" %}
+
+{% block extra_card_content_1 %}
+    <p style="font-size: 0.9rem;">
+        ({{band.startYear}} - {% if band.endYear %} {{ artist.endYear }} {% else %}Today{% endif %})
+    </p>
+{% endblock %}
+
+{% block extra_card_content_2 %}
+    <div class="mt-auto" style="text-align: right;">
+        <a class="link-pop text-decoration-none" href="{{ card_link }}">
+            <img src="{{ card_svg }}" alt="Icon">
+        </a>
+    </div>
+{% endblock %}

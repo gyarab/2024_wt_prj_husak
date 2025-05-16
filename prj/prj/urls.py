@@ -30,7 +30,7 @@ urlpatterns = [
     path('alba/', albums_view, name='alba'),
     path('skladby/', songs_view, name='skladby'),
     path('kapely/', bands_view, name='kapely'),
-    path('osobnosti/', artists_view, name='osobnosti'),
+    path('clenove/', artists_view, name='clenove'),
 ]
 
 if settings.DEBUG:

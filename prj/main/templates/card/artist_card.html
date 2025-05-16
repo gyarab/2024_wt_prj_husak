@@ -1,0 +1,7 @@
+{% extends "card/card.html" %}
+
+{% block extra_card_content_1 %}
+    <p style="font-size: 0.9rem;">
+        ({{artist.birth_year}} - {% if artist.death_year %} {{ artist.death_year }} {% else %}Today{% endif %})
+    </p>
+{% endblock %}

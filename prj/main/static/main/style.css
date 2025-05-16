@@ -37,3 +37,19 @@
     color: #bfdae0;
     text-shadow: 0 0 8px #bfdae0;
 }
+
+.card-img-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

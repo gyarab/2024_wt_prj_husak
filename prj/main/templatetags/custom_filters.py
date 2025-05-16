@@ -13,6 +13,6 @@ def smart_truncate(value, max_length=100):
 
     for i in reversed(range(len(truncated))):
         if not truncated[i].isalnum():
-            return truncated[:i+1].rstrip() + '...'
+            return truncated[:i+1].rstrip() + ' ...'
         
-    return truncated + '...'
+    return truncated + ' ...'

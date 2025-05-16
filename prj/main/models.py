@@ -41,6 +41,7 @@ class Song(models.Model):
     image = models.ImageField(upload_to='song_images/', null=True, blank=True, default='song_images/default.png')
     link = models.URLField(blank=True, default="#")
 
+
     def __str__(self):
         return f"{self.title} ({self.album})"
 

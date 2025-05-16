@@ -1,0 +1,24 @@
+{% extends "card/card.html" %}
+
+{% block extra_card_content_1 %}
+    <p style="font-size: 0.9rem;">
+        ({{album.year}})
+    </p>
+{% endblock %}
+
+
+{% block extra_card_content_2 %}
+    <hr class="mt-0">
+    <p class="text-start ms-2">
+        <b>Kapela:</b> 
+        <a class="text-decoration-none link-pop" href="/kapely?name={{album.band.title}}">
+            {{album.band.title}}
+            <img src="/static/icons/link.svg" style="vertical-align: -2px; height: 16px;" alt="Icon">
+        </a>
+    </p>
+    <div class="mt-auto" style="text-align: right;">
+        <a class="link-pop text-decoration-none" href="{{ card_link }}">
+            <img src="{{ card_svg }}" alt="Icon">
+        </a>
+    </div>
+{% endblock %}

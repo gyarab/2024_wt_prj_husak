@@ -1,17 +1,15 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-    <header>
-        <h3>Skladby</h3>
-        <hr></hr>
-    </header>
+    {% include "main/header.html" with page_title="Skladby" %}
+
     <main>
         <div class="container text-center">
             <div class="row">
                 {% for song in songs %}
-                    {% include "main/card.html" with card_title=song.title card_text=song.description card_img=song.image.url card_link=song.link card_link_text="Listen Now" card_second_link=song.album.link card_svg="/static/icons/note.svg" %}
+                    {% include "card/song_card.html" with card_title=song.title card_text=song.description card_img=song.image.url card_link=song.link card_link_text="Listen Now" card_second_link=song.album.link card_svg="/static/icons/note.svg" %}
                 {% endfor %}
-                {% include "main/modal.html" %}
+                {% include "modal/modal.html" %}
             </div>   
         </div>        
     </main>

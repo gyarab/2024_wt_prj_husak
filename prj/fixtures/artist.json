@@ -4,9 +4,10 @@
     "pk": 1,
     "fields": {
         "name": "Dave Mustaine",
+        "description": "David Scott Mustaine is an American musician. He is best known as the co-founder, frontman, primary songwriter and sole consistent member of the thrash metal band Megadeth and for his time as the lead guitarist of Metallica.",
         "birth_year": 1961,
         "death_year": null,
-        "image": "member_images/dave_mustaine_8noRfQY.jpg"
+        "image": "artist_images/dave_mustaine_8noRfQY.jpg"
     }
 }
 ]
