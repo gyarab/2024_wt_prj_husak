@@ -4,14 +4,14 @@
     <hr class="mt-0">
     <p class="text-start ms-2" style="margin-bottom: 0.5rem;">
         <b>Album:</b> 
-        <a class="text-decoration-none link-pop" href="/alba?name={{song.album.title}}">
+        <a class="text-decoration-none link-pop" href="/alba?name={{song.album.id}}">
             {{song.album.title}}
             <img src="/static/icons/link.svg" style="vertical-align: -2px; height: 16px;" alt="Icon">
         </a>
     </p>
     <p class="text-start ms-2">
         <b>Kapela:</b> 
-        <a class="text-decoration-none link-pop" href="/kapely?name={{song.album.band.title}}">
+        <a class="text-decoration-none link-pop" href="/kapely?name={{song.album.band.id}}">
             {{song.album.band.title}}
             <img src="/static/icons/link.svg" style="vertical-align: -2px; height: 16px;" alt="Icon">
         </a>
@@ -21,4 +21,5 @@
             <img src="{{ card_svg }}" alt="Icon">
         </a>
     </div>
+    
 {% endblock %}

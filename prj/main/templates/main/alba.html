@@ -7,9 +7,9 @@
         <div class="container text-center">
             <div class="row">
                 {% for album in albums %}
-                    {% include "card/album_card.html" with card_title=album.title card_text=album.description card_img=album.image.url card_link=album.link card_link_text="Listen now" card_second_link=album.band.link card_svg="/static/icons/album.svg" %}
+                    {% include "card/album_card.html" with card_title=album.title card_text=album.description card_img=album.image.url card_link=album.link card_link_text="Listen now" card_second_link=album.band.link card_svg="/static/icons/album.svg" card_id=album.id card_type="album" %}
                 {% endfor %}
-                {% include "modal/modal.html" %}
+                {% include "modal/album_modal.html" %}
             </div>
         </div>      
     </main>

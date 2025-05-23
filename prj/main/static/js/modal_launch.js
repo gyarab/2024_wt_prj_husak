@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (name) {
         const modalTriggers = document.querySelectorAll('[data-bs-toggle="modal"]');
-        const targetCard = Array.from(modalTriggers).find(el => el.getAttribute('data-title') === name);
+        const targetCard = Array.from(modalTriggers).find(el => el.getAttribute('data-id') === name);
 
         if (targetCard) {
             targetCard.click();

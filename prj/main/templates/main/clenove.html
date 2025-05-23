@@ -7,7 +7,7 @@
         <div class="container text-center">
             <div class="row">
                 {% for artist in artists %}
-                    {% include "card/artist_card.html" with card_title=artist.name card_text=artist.description card_img=artist.image.url card_link=artist.link card_link_text="Listen Now" card_svg="/static/icons/artist.svg" %}
+                    {% include "card/artist_card.html" with card_title=artist.name card_text=artist.description card_img=artist.image.url card_link=artist.link card_link_text="Listen Now" card_svg="/static/icons/artist.svg" card_id=artist.id card_type="artist" %}
                 {% endfor %}
                 {% include "modal/modal.html" %}
             </div>   

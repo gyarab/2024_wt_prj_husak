@@ -7,7 +7,7 @@
         <div class="container text-center">
             <div class="row">
                 {% for song in songs %}
-                    {% include "card/song_card.html" with card_title=song.title card_text=song.description card_img=song.image.url card_link=song.link card_link_text="Listen Now" card_second_link=song.album.link card_svg="/static/icons/note.svg" %}
+                    {% include "card/song_card.html" with card_title=song.title card_text=song.description card_img=song.image.url card_link=song.link card_link_text="Listen Now" card_second_link=song.album.link card_svg="/static/icons/note.svg" card_id=song.id card_type="song" %}
                 {% endfor %}
                 {% include "modal/modal.html" %}
             </div>   
