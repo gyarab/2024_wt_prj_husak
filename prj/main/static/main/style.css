@@ -53,3 +53,9 @@
     height: 100%;
     object-fit: cover;
 }
+
+.modal-dialog-scrollable .modal-body::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  

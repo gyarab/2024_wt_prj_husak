@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
-from .models import Band, Album, Artist, Song
+from .models import Band, Album, Artist, Song, BandArtist
 
 
 def bands_view(request):
@@ -31,11 +31,43 @@ def album_detail_api(request, album_id):
 
 def artist_detail_api(request, artist_id):
     artist = get_object_or_404(Artist, pk=artist_id)
-    bands = Band.objects.filter(bandartist__artist=artist).values('id', 'name')
+    bandaritst = BandArtist.objects.filter(artist=artist).select_related('band')
+
+    bands = [
+        {
+            "id": bandaritst.band.id,
+            "title": bandaritst.band.title,
+            "startYear": bandaritst.startYear,
+            "endYear": bandaritst.endYear,
+        }
+        for bandaritst in bandaritst
+    ]
+
     data = {
         "id": artist.id,
         "name": artist.name,
-        "songs": list(bands)
+        "bands": list(bands)
+    }
+    return JsonResponse(data)
+
+def band_detail_api(request, band_id):
+    band = get_object_or_404(Band, pk=band_id)
+    bandaritst = BandArtist.objects.filter(band=band).select_related('artist')
+
+    artists = [
+        {
+            "id": bandaritst.artist.id,
+            "name": bandaritst.artist.name,
+            "startYear": bandaritst.startYear,
+            "endYear": bandaritst.endYear,
+        }
+        for bandaritst in bandaritst
+    ]
+
+    data = {
+        "id": band.id,
+        "title": band.title,
+        "artists": list(artists)
     }
     return JsonResponse(data)
 

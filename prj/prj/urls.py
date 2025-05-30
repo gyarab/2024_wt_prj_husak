@@ -24,6 +24,8 @@ from main.views import artists_view
 from main.views import songs_view
 from main.views import bands_view
 from main.views import album_detail_api
+from main.views import band_detail_api
+from main.views import artist_detail_api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,6 +35,8 @@ urlpatterns = [
     path('kapely/', bands_view, name='kapely'),
     path('clenove/', artists_view, name='clenove'),
     path('api/album/<int:album_id>/', album_detail_api, name='album_detail_api'),
+    path('api/band/<int:band_id>/', band_detail_api, name='band_detail_api'),
+    path('api/artist/<int:artist_id>/', artist_detail_api, name='artist_detail_api'),
 ]
 
 if settings.DEBUG:

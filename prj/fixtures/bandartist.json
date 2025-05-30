@@ -1,12 +1,1 @@
-[
-{
-    "model": "main.bandartist",
-    "pk": 1,
-    "fields": {
-        "band": 1,
-        "artist": 1,
-        "startYear": 1983,
-        "endYear": null
-    }
-}
-]
+[{"model": "main.bandartist", "pk": 1, "fields": {"band": 1, "artist": 1, "startYear": 1983, "endYear": null}}, {"model": "main.bandartist", "pk": 2, "fields": {"band": 2, "artist": 1, "startYear": 1981, "endYear": 1983}}, {"model": "main.bandartist", "pk": 3, "fields": {"band": 3, "artist": 4, "startYear": 1979, "endYear": 1983}}, {"model": "main.bandartist", "pk": 4, "fields": {"band": 2, "artist": 4, "startYear": 1983, "endYear": null}}, {"model": "main.bandartist", "pk": 5, "fields": {"band": 2, "artist": 5, "startYear": 2003, "endYear": null}}, {"model": "main.bandartist", "pk": 6, "fields": {"band": 2, "artist": 6, "startYear": 1981, "endYear": 1986}}, {"model": "main.bandartist", "pk": 7, "fields": {"band": 2, "artist": 2, "startYear": 1981, "endYear": null}}]

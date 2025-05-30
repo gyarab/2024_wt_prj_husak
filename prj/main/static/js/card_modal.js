@@ -37,9 +37,17 @@ $('#cardModal').on('show.bs.modal', function (event) {
         });
     }
 
-    if(type == 'album') {
-        album_modal(modal, id);
-    }
+    switch (type) {
+        case "album":
+            album_modal(modal, id);
+            break;
+        case "artist":
+            artist_modal(modal, id);
+            break;
+        case "band":
+            band_modal(modal, id);
+            break;
+      }
 });
 
 
@@ -55,6 +63,10 @@ function album_modal(modal, id) {
     fetch(`/api/album/${id}/`)
         .then(response => response.json())
         .then(data => {
+            if (!data.songs || data.songs.length === 0) {
+                modal.find('#modalAdditional').html("");
+                return;
+            }
             const songsHtml = data.songs.map(song => `
                 <div class="text-start ms-2">
                     <a class="text-start ms-2 text-decoration-none link-pop" href="/skladby?name=${song.id}">
@@ -69,6 +81,72 @@ function album_modal(modal, id) {
                 <div class="text-start ms-2"> 
                     <strong>Songs:</strong>
                     ${songsHtml}
+                </div>
+            `;
+
+            modal.find('#modalAdditional').html(modalContent);
+        })
+        .catch(error => {
+            console.error('Error fetching album data:', error);
+        });
+}
+
+function artist_modal(modal, id) {
+    fetch(`/api/artist/${id}/`)
+        .then(response => response.json())
+        .then(data => {
+            if (!data.bands || data.bands.length === 0) {
+                modal.find('#modalAdditional').html("");
+                return;
+            }
+            const bandsHtml = data.bands.map(band => `
+                <div class="text-start ms-2">
+                    <a class="text-start ms-2 text-decoration-none link-pop" href="/kapely?name=${band.id}">
+                    ${band.title}
+                        <img src="/static/icons/link.svg" style="vertical-align: -2px; height: 16px;" alt="Icon">
+                        (${band.startYear} - ${band.endYear ?? "Today"})
+                    </a>
+                </div>
+            `).join('')
+
+            const modalContent = `
+                <hr class="mt-0">
+                <div class="text-start ms-2"> 
+                    <strong>Bands:</strong>
+                    ${bandsHtml} 
+                </div>
+            `;
+
+            modal.find('#modalAdditional').html(modalContent);
+        })
+        .catch(error => {
+            console.error('Error fetching album data:', error);
+        });
+}
+
+function band_modal(modal, id) {
+    fetch(`/api/band/${id}/`)
+        .then(response => response.json())
+        .then(data => {
+            if (!data.artists || data.artists.length === 0) {
+                modal.find('#modalAdditional').html("");
+                return;
+            }
+            const artistsHtml = data.artists.map(artist => `
+                <div class="text-start ms-2">
+                    <a class="text-start ms-2 text-decoration-none link-pop" href="/clenove?name=${artist.id}">
+                    ${artist.name}
+                        <img src="/static/icons/link.svg" style="vertical-align: -2px; height: 16px;" alt="Icon">
+                    </a>
+                    (${artist.startYear} - ${artist.endYear ?? "Today"})
+                </div>
+            `).join('')
+
+            const modalContent = `
+                <hr class="mt-0">
+                <div class="text-start ms-2"> 
+                    <strong>Artists:</strong>
+                    ${artistsHtml}
                 </div>
             `;
 
